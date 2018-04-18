@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    FloatingActionButton bebidas,comidas;
+    FloatingActionButton bebidas,comidas,salir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         bebidas= (FloatingActionButton) findViewById(R.id.bebidas);
         comidas= (FloatingActionButton) findViewById(R.id.comidas);
+        salir = (FloatingActionButton) findViewById(R.id.salir);
 
         bebidas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent comidas = new Intent(MainActivity.this,comida.class);
                 startActivity(comidas);
+            }
+        });
+        salir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.exit(0);
             }
         });
     }

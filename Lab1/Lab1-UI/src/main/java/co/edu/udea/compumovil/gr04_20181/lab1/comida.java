@@ -25,6 +25,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.NumberPicker;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,17 +36,23 @@ public class comida extends AppCompatActivity {
     private EditText nombre;
     private EditText precio;
     private EditText ingredientes;
-    private TextView nombreM, precioM, ingredientesM,duracionM;
+    private TextView nombreM, precioM, ingredientesM,duracionM,tipoPlatoM;
     private FloatingActionButton guardar,limpiar;
     private TextView duracion;
+    private RadioButton fuerte;
+    private RadioButton entrada;
     private Uri imageUri;
     private Context context = this;
     private RelativeLayout datos;
+
     private Drawable imagenDefefecto;
+
     private String mensajeNombre;
     private String mensajePrecio;
     private String mensajeIngredientes;
     private String mensajeEditar;
+    private String mensajeEntrada;
+    private String mensajeFuerte;
 
 
     @Override
@@ -70,6 +77,9 @@ public class comida extends AppCompatActivity {
         datos = (RelativeLayout) findViewById(R.id.datos);
         duracion = (TextView) findViewById(R.id.duracion);
         duracionM = (TextView) findViewById(R.id.duracionM);
+        tipoPlatoM= (TextView) findViewById(R.id.tipoPlatoM);
+        fuerte = (RadioButton) findViewById(R.id.fuerte);
+        entrada = (RadioButton) findViewById(R.id.entrada);
         datos.setVisibility(View.GONE);
 
         imagenDefefecto = imagenEntrada.getDrawable();
@@ -77,6 +87,8 @@ public class comida extends AppCompatActivity {
         mensajePrecio = precio.getText().toString();
         mensajeIngredientes = ingredientes.getText().toString();
         mensajeEditar = duracion.getText().toString();
+        mensajeEntrada = entrada.getText().toString();
+        mensajeFuerte = fuerte.getText().toString();
 
         SharedPreferences sharedPref = context.getSharedPreferences("Data",context.MODE_PRIVATE);
 
@@ -95,6 +107,11 @@ public class comida extends AppCompatActivity {
                     editor.putString("ingredientesComida",ingredientes.getText().toString());
                     editor.putString("imagenUriComida",imageUri.toString());
                     editor.putString("duracionComida",duracion.getText().toString());
+                    if(fuerte.isChecked()){
+                        editor.putString("tipoPlato",mensajeFuerte);
+                    }else if(entrada.isChecked()){
+                        editor.putString("tipoPlato",mensajeEntrada);
+                    }
                     editor.putBoolean("hayDatosComida",true);
                     editor.commit();
                     mostrarDatos();
@@ -118,6 +135,7 @@ public class comida extends AppCompatActivity {
                 editor.putString("ingredientesComida","");
                 editor.putString("imagenUriComida","");
                 editor.putString("duracionComida","");
+                editor.putString("tipoPlato","");
                 editor.putBoolean("hayDatosComida",false);
                 editor.commit();
                 datos.setVisibility(View.GONE);
@@ -148,6 +166,8 @@ public class comida extends AppCompatActivity {
         precio.setText(mensajePrecio);
         duracion.setText(mensajeEditar);
         ingredientes.setText(mensajeIngredientes);
+        entrada.setChecked(false);
+        fuerte.setChecked(false);
     }
 
     private boolean datosCompletos() {
@@ -166,6 +186,10 @@ public class comida extends AppCompatActivity {
         if(imagenDefefecto.equals(imagenEntrada.getDrawable())){
             return false;
         }
+        if((!fuerte.isChecked()) &&(!entrada.isChecked())){
+            return false;
+        }
+
         return true;
     }
 
@@ -200,6 +224,7 @@ public class comida extends AppCompatActivity {
         precioM.setText(sharedPref.getString("precioComida",""));
         duracionM.setText(sharedPref.getString("duracionComida",""));
         ingredientesM.setText(sharedPref.getString("ingredientesComida",""));
+        tipoPlatoM.setText(sharedPref.getString("tipoPlato",""));
         datos.setVisibility(View.VISIBLE);
     }
 

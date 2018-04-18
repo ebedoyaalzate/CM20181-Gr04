@@ -69,6 +69,7 @@ public class bebida extends AppCompatActivity {
         ingredientesM = (TextView) findViewById(R.id.ingredientesM);
         guardar = (FloatingActionButton) findViewById(R.id.guardar);
         limpiar = (FloatingActionButton) findViewById(R.id.limpiar);
+        datos = (RelativeLayout) findViewById(R.id.datos);
 
         datos.setVisibility(View.GONE);
 
