@@ -14,6 +14,7 @@
     <string name="entrada">Entrada</string>
     <string name="tipoPlato">Tipo de plato</string>
     <string name="informacionBedida">Informacion de bebida</string>
+    <string name="informacionComida">Informacion de comida</string>
     <string name="guardar">Guardar</string>
     <string name="minutos">Minutos:</string>
     <string name="duracion">Duracion:</string>

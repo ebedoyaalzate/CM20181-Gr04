@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DeliPasta</string>
+    <string name="rest_name">DeliPasta</string>
+    <string name="ingresarBebida">ADD DRINKING INFORMATION</string>
+    <string name="ingresarComida">ADD FOOD INFORMATION</string>
+    <string name="nombre">Name  </string>
+    <string name="precio">Price  </string>
+    <string name="ingredientes">Ingredients</string>
+    <string name="noche">Night</string>
+    <string name="tarde">Late</string>
+    <string name="mañana">Morning</string>
+    <string name="horario">Schedule</string>
+    <string name="fuerte">Main course</string>
+    <string name="entrada">Before main course</string>
+    <string name="tipoPlato">Type of plate</string>
+    <string name="informacionBedida">Drinking information</string>
+    <string name="informacionComida">Food information</string>
+    <string name="guardar">Save</string>
+    <string name="minutos">Minutes:</string>
+    <string name="duracion">Duration:</string>
+    <string name="editar">Edit</string>
+</resources>
