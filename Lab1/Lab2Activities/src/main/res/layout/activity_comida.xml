@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".comida">
+
+    <RelativeLayout
+        android:id="@+id/ingresoInformacion"
+        android:layout_width="match_parent"
+        android:layout_height="294dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/guardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/layoutDuracion"
+            android:layout_below="@+id/layoutDuracion"
+            android:text="@string/guardar"
+            app:srcCompat="@drawable/guardar" />
+
+        <LinearLayout
+            android:id="@+id/horario"
+            android:layout_width="wrap_content"
+            android:layout_height="123dp"
+            android:layout_alignLeft="@+id/nombre"
+            android:layout_below="@+id/ingredientes"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/horario"
+                android:textSize="15dp" />
+
+            <CheckBox
+                android:id="@+id/mañana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/ingredientes"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/ingredientes"
+                android:text="@string/mañana" />
+
+            <CheckBox
+                android:id="@+id/tarde"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/nombre"
+                android:layout_alignParentBottom="true"
+                android:text="@string/tarde" />
+
+            <CheckBox
+                android:id="@+id/noche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/nombre"
+                android:text="@string/noche" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TituloIngreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/ingresarComida"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/fotoI"
+            android:layout_width="108dp"
+            android:layout_height="102dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/TituloIngreso"
+            android:layout_marginRight="12dp"
+            app:srcCompat="@drawable/camara"
+            tools:layout_editor_absoluteX="32dp"
+            tools:layout_editor_absoluteY="54dp" />
+
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="183dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="30dp"
+            android:layout_toLeftOf="@id/fotoI"
+            android:ems="10"
+            android:hint="@string/nombre"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions|textCapWords" />
+
+        <EditText
+            android:id="@+id/precio"
+            android:layout_width="163dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/fotoI"
+            android:layout_alignLeft="@+id/nombre"
+            android:layout_toLeftOf="@+id/pesos"
+            android:ems="10"
+            android:hint="@string/precio"
+            android:imeOptions="actionNext"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/pesos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/precio"
+            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@id/fotoI"
+            android:text="$"
+            android:textSize="30dp" />
+
+        <EditText
+            android:id="@+id/ingredientes"
+            android:layout_width="303dp"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/nombre"
+            android:layout_below="@+id/fotoI"
+            android:ems="10"
+            android:hint="@string/ingredientes"
+            android:imeOptions="actionNext"
+            android:inputType="textNoSuggestions|textCapWords" />
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/plato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/horario"
+            android:layout_below="@+id/ingredientes"
+            android:layout_toRightOf="@+id/horario"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_toLeftOf="@+id/tipoPlato"
+                android:text="@string/tipoPlato"
+                android:textSize="15dp" />
+
+            <RadioGroup
+                android:id="@+id/tipoPlato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="52dp"
+                android:layout_toRightOf="@+id/horario">
+
+                <RadioButton
+                    android:id="@+id/entrada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/entrada" />
+
+                <RadioButton
+                    android:id="@+id/fuerte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/fuerte" />
+            </RadioGroup>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/layoutDuracion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/horario"
+
+            android:layout_below="@+id/ingredientes"
+            android:layout_toRightOf="@+id/plato"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_toLeftOf="@+id/tipoPlato"
+                android:text="@string/duracion"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/duracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_toLeftOf="@+id/tipoPlato"
+                android:text="@string/editar"
+                android:textColor="@color/negro"
+                android:textSize="20dp" />
+
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/datos"
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingresoInformacion"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/limpiar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:srcCompat="@drawable/borrar"
+            android:layout_toRightOf="@+id/tituloMuestra"
+            android:layout_marginLeft="30dp"/>
+
+        <TextView
+            android:id="@+id/tituloMuestra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/informacionComida"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/fotoM"
+            android:layout_width="108dp"
+            android:layout_height="102dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/tituloMuestra"
+            android:layout_toRightOf="@+id/fotoM">
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:orientation="horizontal"
+                android:id="@+id/nameLoadContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nombre"
+                    android:layout_marginRight="10dp"
+                    android:textAlignment="inherit" />
+
+                <TextView
+                    android:id="@+id/nombreM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </android.support.v7.widget.LinearLayoutCompat>
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/priceLoadContainer"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/precio"
+                    android:layout_marginRight="10dp"
+                    android:textAlignment="inherit" />
+
+                <TextView
+                    android:id="@+id/precioM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/pesosM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/precioM"
+                    android:layout_toRightOf="@+id/precioM"
+                    android:text="$"
+                    android:textSize="15dp" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/ingredientsLoadContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ingredientes"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/ingredientesM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/ingredientsLoadContainer3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tipoPlato"
+                    android:layout_marginRight="2dp"/>
+
+                <TextView
+                    android:id="@+id/tipoPlatoM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+            <android.support.v7.widget.LinearLayoutCompat
+                android:id="@+id/ingredientsLoadContainer4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/duracion"
+                    android:layout_marginRight="2dp"/>
+
+                <TextView
+                    android:id="@+id/duracionM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.LinearLayoutCompat>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

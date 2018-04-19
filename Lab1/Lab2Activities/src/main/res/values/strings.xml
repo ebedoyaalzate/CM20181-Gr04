@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DeliPasta</string>
+    <string name="rest_name">DeliPasta</string>
+    <string name="ingresarBebida">INGRESAR INFORMACION DE BEBIDA</string>
+    <string name="ingresarComida">INGRESAR INFORMACION DE COMIDA</string>
+    <string name="nombre">Nombre  </string>
+    <string name="precio">Precio  </string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="noche">Noche</string>
+    <string name="tarde">Tarde</string>
+    <string name="mañana">Mañana</string>
+    <string name="horario">Horario</string>
+    <string name="fuerte">Plato fuerte</string>
+    <string name="entrada">Entrada</string>
+    <string name="tipoPlato">Tipo de plato</string>
+    <string name="informacionBedida">Informacion de bebida</string>
+    <string name="informacionComida">Informacion de comida</string>
+    <string name="guardar">Guardar</string>
+    <string name="minutos">Minutos:</string>
+    <string name="duracion">Duracion:</string>
+    <string name="editar">Editar</string>
+</resources>
